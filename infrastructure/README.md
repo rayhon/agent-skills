@@ -1,20 +1,20 @@
-# Interviews
+# Topics
 
 <table>
   <tr>
     <td width="35%">
-      <a href="https://www.youtube.com/watch?v=j-kMDPAtQUc">
-        <img src="https://img.youtube.com/vi/j-kMDPAtQUc/maxresdefault.jpg" alt="Erik Bernhardsson - Can AI Infrastructure Work Like Magic?" style="border-radius: 8px;">
+      <a href="https://www.youtube.com/watch?v=-ZL2MRAQSg0">
+        <img src="https://img.youtube.com/vi/-ZL2MRAQSg0/maxresdefault.jpg" alt="Erik Bernhardsson - Serverless for AI at Scale" style="border-radius: 8px;">
       </a>
     </td>
     <td valign="top">
-      <h3>Can AI Infrastructure Work Like Magic?</h3>
-      <p><strong>Erik Bernhardsson, CEO of Modal</strong></p>
+      <h3>Serverless for AI at Scale</h3>
+      <p><strong>Erik Bernhardsson, CEO of Modal (Data Driven NYC)</strong></p>
       <ul>
-        <li><strong>From Spotify to GPU Cloud</strong>: Erik shares how building Spotify's recommendation engine (and the <code>Luigi</code> orchestrator) led him to realize that infra is usually the bottleneck for AI teams, not the code.</li>
-        <li><strong>The "Killer Use Case"</strong>: He details how the explosion of **Stable Diffusion** served as Modal’s breakthrough moment, proving that bursty, GPU-heavy inference is the primary pain point for modern startups.</li>
-        <li><strong>Elasticity vs. Clusters</strong>: Why the shift from management-heavy clusters to "scaling in seconds" is the only sustainable path for batch processing and model execution in the AI era.</li>
-        <li><strong>Cloud Maximalism</strong>: Erik explains his philosophy of running user code in a deeply integrated, multi-tenant cloud environment to achieve the "Magic" developer experience.</li>
+        <li><strong>Beyond Kubernetes</strong>: Insight into why Modal built its own custom scheduler, file system, and container runtime from the ground up to achieve extreme efficiency for AI.</li>
+        <li><strong>True Serverless GPU</strong>: A usage-based model where you pay strictly for active runtime, eliminating the "idle tax" common in traditional cloud GPU clusters.</li>
+        <li><strong>Multi-Cloud Elasticity</strong>: How Modal pools GPU capacity across AWS, GCP, Oracle, and others to scale from zero to thousands of GPUs in seconds.</li>
+        <li><strong>Infrastructure for GenAI</strong>: Use cases for high-scale image, audio (Suno), and video inference, as well as LLM fine-tuning and biotech applications.</li>
       </ul>
     </td>
   </tr>

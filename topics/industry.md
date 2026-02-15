@@ -3,6 +3,48 @@
 <table>
   <tr>
     <td width="35%">
+      <a href="https://www.youtube.com/watch?v=WuOlqBsDg-w">
+        <img src="https://img.youtube.com/vi/WuOlqBsDg-w/maxresdefault.jpg" alt="Claude Agent Teams vs Kimi Agent Swarm" style="border-radius: 8px;">
+      </a>
+    </td>
+    <td valign="top">
+      <h3>Agent Orchestration: Teams vs. Swarms</h3>
+      <p><strong>System Design & Comparative Analysis</strong></p>
+      <ul>
+        <li><strong>Claude Agent Teams</strong>: Exploring the hierarchical approach where structured communication and task delegation define the workflow.</li>
+        <li><strong>Kimi Agent Swarm</strong>: Deep dive into decentralized orchestration, focusing on how large numbers of specialized agents collaborate dynamically.</li>
+        <li><strong>System Design Architecture</strong>: A conceptual breakdown of how different platforms handle state management and agent-to-agent interaction.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table>
+  <tr>
+    <td width="35%">
+      <a href="https://www.youtube.com/watch?v=WW_odt7uZTs">
+        <img src="https://img.youtube.com/vi/WW_odt7uZTs/maxresdefault.jpg" alt="Seedance 2.0 Demo" style="border-radius: 8px;">
+      </a>
+    </td>
+    <td valign="top">
+      <h3>Seedance 2.0: Next-Gen AI Video</h3>
+      <p><strong>Feature Showcase & Community Review</strong></p>
+      <ul>
+        <li><strong>Unprecedented Realism</strong>: Massive leap in temporal consistency and cinematic quality for AI-generated video.</li>
+        <li><strong>Control Net for Video</strong>: Deep dive into the new motion control features that allow for precise character and camera guidance.</li>
+        <li><strong>Production Ready</strong>: How the 2.0 update positions Seedance as a serious tool for creators and studios.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table>
+  <tr>
+    <td width="35%">
       <a href="https://www.youtube.com/watch?v=-ZL2MRAQSg0">
         <img src="https://img.youtube.com/vi/-ZL2MRAQSg0/maxresdefault.jpg" alt="Erik Bernhardsson - Serverless for AI at Scale" style="border-radius: 8px;">
       </a>

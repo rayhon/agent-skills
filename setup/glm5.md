@@ -15,3 +15,25 @@ The latest model from z.ai - GLM-5 just got release. As per the benchmark it is 
 }
 ```
 
+# GLM 5 API
+```bash
+curl --location 'https://api.z.ai/api/coding/paas/v4/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'Accept-Language: en-US,en' \
+--header 'Authorization: Bearer $ZAI_API_KEY' \
+--data '{
+    "model": "glm-5",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful AI assistant."
+        },
+        {
+            "role": "user",
+            "content": "Why sky is blue?"
+        }
+    ],
+    "stream":true
+}'
+```
+

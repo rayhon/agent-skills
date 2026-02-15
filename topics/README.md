@@ -2,25 +2,26 @@
 
 Technical guides, best practices, and trending topics for AI developers.
 
-## Setup Guides
+## Coding
 
 | Topic | Description |
 |-------|-------------|
-| [GLM-5 Setup](glm5.md) | Configure Claude Code to use GLM-5 model from z.ai as an alternative to Anthropic models |
+| [GLM-5 Setup](coding/glm5.md) | Configure Claude Code to use GLM-5 model from z.ai as an alternative to Anthropic models |
+| [Skill Best Practices](coding/skill-best-practice.md) | Five key patterns for creating effective AI agent skills: description engineering, impact quantification, progressive disclosure, first-party authority, and anti-pattern documentation |
 
-## Best Practices
-
-| Topic | Description |
-|-------|-------------|
-| [Skill Best Practices](skill-best-practice.md) | Five key patterns for creating effective AI agent skills: description engineering, impact quantification, progressive disclosure, first-party authority, and anti-pattern documentation |
-
-## Deployment & Infrastructure
+## Image Generation
 
 | Topic | Description |
 |-------|-------------|
-| [Modal Deployment](modal.md) | Complete guide to deploying AI models serverlessly with Modal, using Flux.1 image generation as a showcase. Covers container lifecycle hooks, GPU configuration, and production deployment |
+| [Image Models](image-generation/image-models.md) | Latest image generation models and tools, including Qwen Image 2.0 |
 
-## Trending Topics
+## Infrastructure
+
+| Topic | Description |
+|-------|-------------|
+| [Modal Deployment](infrastructure/modal.md) | Complete guide to deploying AI models serverlessly with Modal, using Flux.1 image generation as a showcase |
+
+## Industry Insights
 
 | Topic | Description |
 |-------|-------------|

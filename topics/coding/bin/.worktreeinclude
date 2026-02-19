@@ -1,0 +1,6 @@
+.env
+.dev.vars
+.npmrc
+.claude
+.wrangler
+node_modules

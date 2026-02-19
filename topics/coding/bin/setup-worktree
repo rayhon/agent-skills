@@ -1,0 +1,103 @@
+BASE_DB_NAME="my_app" # This will be used as the prefix for your sandboxed databases
+
+# 1. Detect Repo Root (allows running the script from anywhere inside the repo)
+MAIN_REPO_DIR=$(git rev-parse --show-toplevel 2>/dev/null)
+if [ -z "$MAIN_REPO_DIR" ]; then
+    echo "❌ Error: Not in a git repository."
+    exit 1
+fi
+
+INCLUDE_FILE="${MAIN_REPO_DIR}/.worktreeinclude"
+
+# 2. Validate Input
+if [ -z "$1" ]; then
+    echo "Usage: $0 <branch-name>"
+    echo ""
+    echo "This script creates a parallel 'Agent Lab' in a sibling directory."
+    echo "It isolates your file system but shares config via symlinks."
+    exit 1
+fi
+
+BRANCH_NAME=$1
+# Replace slashes in branch name for folder safety
+SAFE_BRANCH_NAME=$(echo "$BRANCH_NAME" | sed 's/\//-/g')
+TARGET_DIR="../worktree-${SAFE_BRANCH_NAME}"
+
+echo "🏗️  Starting Agent Lab setup for: $BRANCH_NAME"
+echo "📂 Target directory: $TARGET_DIR"
+
+# 2. Create the Git Worktree
+if [ -d "$TARGET_DIR" ]; then
+    echo "⚠️  Directory $TARGET_DIR already exists. Skipping 'git worktree add'."
+else
+    git worktree add -b "$BRANCH_NAME" "$TARGET_DIR"
+    if [ $? -ne 0 ]; then
+        echo "❌ Failed to create worktree."
+        exit 1
+    fi
+fi
+
+# 3. Handle Symlinks
+if [ ! -f "$INCLUDE_FILE" ]; then
+    echo "❌ Error: $INCLUDE_FILE not found in repository root."
+    echo "Please create it and list the files/folders you want to symlink."
+    exit 1
+fi
+
+echo "🔗 Linking assets from $INCLUDE_FILE..."
+ASSETS_TO_LINK=()
+while IFS= read -r item || [[ -n "$item" ]]; do
+    [[ -z "$item" || "$item" =~ ^# ]] && continue
+    ASSETS_TO_LINK+=("$item")
+done < "$INCLUDE_FILE"
+
+cd "$TARGET_DIR" || exit
+for item in "${ASSETS_TO_LINK[@]}"; do
+    # Check if the item exists in main repo
+    if [ -e "${MAIN_REPO_DIR}/${item}" ]; then
+        # Create parent directories if they don't exist
+        mkdir -p "$(dirname "$item")"
+        
+        # Remove existing file/link if it exists to avoid error
+        rm -rf "$item"
+        
+        # Create the link pointing back to the main repo
+        ln -s "${MAIN_REPO_DIR}/${item}" "$item"
+        echo "   ✅ Linked: $item"
+    else
+        echo "   ⚠️  Skipped: $item (not found in main repo)"
+    fi
+done
+cd "$MAIN_REPO_DIR" || exit
+
+# 4. Database Sandbox Setup
+echo "🗄️  Setting up database sandbox..."
+ENV_LOCAL="${TARGET_DIR}/.env.local"
+
+# Unique suffix for this branch
+DB_SUFFIX=$(echo "$SAFE_BRANCH_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/-/_/g')
+
+cat <<EOT > "$ENV_LOCAL"
+# AUTO-GENERATED FOR AGENT LAB
+DB_DATABASE=${BASE_DB_NAME}_${DB_SUFFIX}
+DB_TEST_DATABASE=${BASE_DB_NAME}_test_${DB_SUFFIX}
+EOT
+
+echo "   ✅ Created .env.local with unique DB names"
+
+# 5. Initialize Database (Example for Rails/Node)
+echo "🚀 Initializing sandbox database..."
+cd "$TARGET_DIR" || exit
+
+# Add your specific setup command here (e.g., rails db:setup or npm run db:init)
+if [ -f "bin/rails" ]; then
+    bin/rails db:create db:schema:load 2>/dev/null && echo "   ✅ Rails DB ready."
+elif [ -f "package.json" ] && grep -q "db:init" package.json; then
+    npm run db:init 2>/dev/null && echo "   ✅ Node DB ready."
+else
+    echo "   ℹ️  Update the script to run your specific DB init command here."
+fi
+
+echo -e "\n✨ Setup Complete!"
+echo "📍 Lab Location: $TARGET_DIR"
+echo "🤖 Try running: cd $TARGET_DIR && claude"

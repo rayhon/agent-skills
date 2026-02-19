@@ -7,7 +7,9 @@ Technical guides, best practices, and trending topics for AI developers.
 | Topic | Description |
 |-------|-------------|
 | [GLM-5 Setup](coding/glm5.md) | Configure Claude Code to use GLM-5 model from z.ai as an alternative to Anthropic models |
-| [Skill Best Practices](coding/skill-best-practice.md) | Five key patterns for creating effective AI agent skills: description engineering, impact quantification, progressive disclosure, first-party authority, and anti-pattern documentation |
+| [Git Worktrees](coding/git-worktree.md) | Run multiple AI agents in parallel without branch conflicts using Git Worktrees |
+| [Skill Best Practices](coding/skill-best-practice.md) | Five key patterns for creating effective AI agent skills |
+| [Statusline Setup](coding/statusline.md) | Premium "Rainbow Edition" HUD setup for Claude Code and Antigravity |
 
 ## Image Generation
 

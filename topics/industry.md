@@ -25,6 +25,28 @@
 <table>
   <tr>
     <td width="35%">
+      <a href="https://www.youtube.com/watch?v=-1K_ZWDKpU0">
+        <img src="https://img.youtube.com/vi/-1K_ZWDKpU0/maxresdefault.jpg" alt="Claude Code Agent Teams" style="border-radius: 8px;">
+      </a>
+    </td>
+    <td valign="top">
+      <h3>Claude Code's Agent Teams Are Insane</h3>
+      <p><strong>Cole Medin • Feb 9, 2026</strong></p>
+      <ul>
+        <li><strong>Real-Time Multi-Agent Collaboration</strong>: Spin up multiple Claude Code agents that communicate with each other, share a task list, and coordinate their work in real time.</li>
+        <li><strong>Agent Teams vs. Subagents</strong>: Understanding when to use each approach — subagents for research (context isolation), agent teams for implementation (peer-to-peer coordination).</li>
+        <li><strong>Contract-First Spawning</strong>: A pattern for intelligent agent orchestration where groundwork is laid before parallel execution, preventing agents from stepping on each other's toes.</li>
+      </ul>
+      <p><a href="coding/agent-teams.md"><strong>Explore the Setup Guide →</strong></a></p>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table>
+  <tr>
+    <td width="35%">
       <a href="https://www.youtube.com/watch?v=WuOlqBsDg-w">
         <img src="https://img.youtube.com/vi/WuOlqBsDg-w/maxresdefault.jpg" alt="Claude Agent Teams vs Kimi Agent Swarm" style="border-radius: 8px;">
       </a>
@@ -57,6 +79,27 @@
         <li><strong>Unprecedented Realism</strong>: Massive leap in temporal consistency and cinematic quality for AI-generated video.</li>
         <li><strong>Control Net for Video</strong>: Deep dive into the new motion control features that allow for precise character and camera guidance.</li>
         <li><strong>Production Ready</strong>: How the 2.0 update positions Seedance as a serious tool for creators and studios.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table>
+  <tr>
+    <td width="35%">
+      <a href="https://www.youtube.com/watch?v=FL_UiNpGgEg">
+        <img src="https://img.youtube.com/vi/FL_UiNpGgEg/maxresdefault.jpg" alt="Multi-User AI Chat App with Convex" style="border-radius: 8px;">
+      </a>
+    </td>
+    <td valign="top">
+      <h3>Multi-User AI Chat App with Convex</h3>
+      <p><strong>Jack Herrington • Feb 10, 2026</strong></p>
+      <ul>
+        <li><strong>Real-Time Multi-User Chat</strong>: Build an AI-enabled dinner coordination app where multiple users share the same thread with synchronized UI via Convex real-time database.</li>
+        <li><strong>Agent Tool Calling</strong>: Deep dive into the choreographed dance of LLM tool calls — from search restaurants to adding items to a shared shortlist.</li>
+        <li><strong>Secured API Surface</strong>: Using Convex internal mutations to ensure sensitive functions can only run server-side, protecting your API keys and business logic.</li>
       </ul>
     </td>
   </tr>

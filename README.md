@@ -54,7 +54,13 @@ project-root/
 If you want to quickly setup an existing project with this exact suite of agent intelligence, you can run this one-liner from your project's root:
 
 ```bash
+# install all agents
 curl -s https://raw.githubusercontent.com/rayhon/agent-skills/refs/heads/main/install-skills.sh | bash
+
+
+# install skills for antigravity and claude-code agents
+curl -s https://raw.githubusercontent.com/rayhon/agent-skills/refs/heads/main/install-skills.sh | bash -s -- antigravity
+curl -s https://raw.githubusercontent.com/rayhon/agent-skills/refs/heads/main/install-skills.sh | bash -s -- claude-code
 ```
 
 *Note: Replace `your-username` and `repo-name` with the actual path to your repository once hosted.*

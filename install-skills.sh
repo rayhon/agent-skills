@@ -21,6 +21,7 @@ SKILLS=(
   "nextlevelbuilder/ui-ux-pro-max-skill@ui-ux-pro-max"
   "anthropics/skills@skill-creator"
   "obra/superpowers@brainstorming"
+  "intellectronica/agent-skills@context7"
 )
 
 for skill in "${SKILLS[@]}"; do
